@@ -18,6 +18,7 @@ linters:
     - exhaustruct
     - testpackage
     - varnamelen
+    - forbidigo
     - gocognit
     - maintidx
     - gocyclo
