@@ -25,14 +25,14 @@ Just run the `inmfortune` and enjoy.
 
 ```go
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/s0rg/inm"
+    "github.com/s0rg/inm"
 )
 
 func main() {
-	gen := inm.New()
+    gen := inm.New()
 
-	fmt.Println(gen)
+    fmt.Println(gen)
 }
 ```
