@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	appName = "Impaled Northern Moon fortunes"
+	appName = "Impaled Northern Moon fortune"
 	appSite = "https://github.com/s0rg/inm"
 )
 
@@ -22,7 +22,7 @@ var (
 
 // command-line flags.
 var (
-	fVersion bool
+	fVersion = flag.Bool("version", false, "version info")
 )
 
 func version() string {
@@ -39,7 +39,7 @@ func version() string {
 func main() {
 	flag.Parse()
 
-	if fVersion {
+	if *fVersion {
 		fmt.Println(version())
 
 		return
