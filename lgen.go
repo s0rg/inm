@@ -2,7 +2,7 @@ package inm
 
 type listGen struct {
 	rnd Random
-	lst WordList
+	lst *Dictionary
 }
 
 func (lg *listGen) Adjective() string {
