@@ -19,11 +19,13 @@ type gen interface {
 	Verb() string
 }
 
+// SongTitleGenerator is a generator instance.
 type SongTitleGenerator struct {
 	gen  gen
 	opts options
 }
 
+// New creates new generator instance.
 func New(opts ...Option) (rv *SongTitleGenerator) {
 	var stg SongTitleGenerator
 
@@ -38,6 +40,7 @@ func New(opts ...Option) (rv *SongTitleGenerator) {
 	return &stg
 }
 
+// String prodece new song title every upon every call.
 func (stg *SongTitleGenerator) String() string {
 	switch stg.opts.rnd(3) {
 	case 2:

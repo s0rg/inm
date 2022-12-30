@@ -14,7 +14,7 @@ var assets embed.FS
 
 const assetsRoot = "assets"
 
-var origWords = WordList{
+var origWords = Dictionary{
 	Adjectives:  load("adjectives.txt"),
 	Adverbs:     load("adverbs.txt"),
 	Nouns:       load("nouns.txt"),
