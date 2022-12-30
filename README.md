@@ -1,3 +1,8 @@
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/s0rg/inm)](https://pkg.go.dev/github.com/s0rg/inm)
+[![License](https://img.shields.io/github/license/s0rg/inm)](https://github.com/s0rg/inm/blob/main/LICENSE)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/s0rg/inm)](go.mod)
+[![Tag](https://img.shields.io/github/v/tag/s0rg/inm?sort=semver)](https://github.com/s0rg/inm/tags)
+
 # Impaled Northern Moonforest song title generator
 
 [What its all about](https://en.wikipedia.org/wiki/Seth_Putnam#Impaled_Northern_Moonforest)
