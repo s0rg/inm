@@ -28,6 +28,16 @@ linters:
     - funlen
     - nestif
     - gomnd
+    - golint
+    - scopelint
+    - structcheck
+    - interfacer
+    - varcheck
+    - maligned
+    - nosnakecase
+    - deadcode
+    - ifshort
+    - depguard
 
 linters-settings:
   govet:
