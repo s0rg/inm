@@ -1,4 +1,5 @@
 # .goreleaser.yml
+version: 2
 project_name: inmfortune
 
 before:
@@ -6,7 +7,7 @@ before:
     - go mod download
 
 builds:
-  - id: "inmfortune"
+  - id: inmfortune-bin
     dir: .
     main: ./cmd/inmfortune
     env: [CGO_ENABLED=0]
@@ -28,13 +29,19 @@ builds:
         goarch: arm64
 
 archives:
-  - format: tar.gz
-    replacements:
-      386: i386
-      amd64: x86_64
+  - id: inmfortune
+    formats: ['tar.gz']
+    ids: [inmfortune-bin]
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Tag }}_
+      {{- .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
     format_overrides:
       - goos: windows
-        format: zip
+        formats: ['zip']
 
 nfpms:
   - id: packages
@@ -45,8 +52,8 @@ nfpms:
     license: MIT
     vendor: s0rg
     formats:
-    - deb
-    - rpm
+      - deb
+      - rpm
 
 changelog:
   filters:

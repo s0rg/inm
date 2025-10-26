@@ -16,12 +16,15 @@ jobs:
       name: ci
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: setup golang
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v6
         with:
-          go-version: ^1.19
-          check-latest: true
-          cache: true
+          go-version: ^1.25
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v8
+      - name: goreleaser-check
+        uses: goreleaser/goreleaser-action@v6
+        with:
+          version: latest
+          args: check -f .goreleaser.yml
