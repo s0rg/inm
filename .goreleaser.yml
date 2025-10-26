@@ -31,7 +31,7 @@ builds:
 archives:
   - id: inmfortune
     formats: ['tar.gz']
-    ids: inmfortune-bin
+    ids: [inmfortune-bin]
     replacements:
       386: i386
       amd64: x86_64
