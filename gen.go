@@ -48,8 +48,9 @@ func (stg *SongTitleGenerator) String() string {
 	case 1:
 		return stg.v2()
 	default:
-		return stg.v3()
 	}
+
+	return stg.v3()
 }
 
 func (stg *SongTitleGenerator) v1() (rv string) {
@@ -73,9 +74,22 @@ func (stg *SongTitleGenerator) v1() (rv string) {
 
 		switch stg.opts.rnd(3) {
 		case 2:
-			p.Add(cAmidst, cThe, stg.gen.Adjective(), stg.gen.Adjective()+stg.gen.Noun(), cOf, cThe, stg.gen.Noun())
+			p.Add(
+				cAmidst,
+				cThe,
+				stg.gen.Adjective(),
+				stg.gen.Adjective()+stg.gen.Noun(),
+				cOf,
+				cThe,
+				stg.gen.Noun())
 		case 1:
-			p.Add(cThe, stg.gen.Adjective(), stg.gen.Adjective()+stg.gen.Noun(), cOf, stg.gen.ProperNoun())
+			p.Add(
+				cThe,
+				stg.gen.Adjective(),
+				stg.gen.Adjective()+stg.gen.Noun(),
+				cOf,
+				stg.gen.ProperNoun(),
+			)
 		default:
 		}
 	}
@@ -138,7 +152,15 @@ func (stg *SongTitleGenerator) v2() (rv string) {
 			if stg.opts.rnd(2) == 1 {
 				p.Add(stg.gen.ProperNoun())
 			} else {
-				p.Add(cThe, stg.gen.Adjective(), stg.gen.Adjective(), stg.gen.Noun(), cOf, cThe, stg.gen.Noun())
+				p.Add(
+					cThe,
+					stg.gen.Adjective(),
+					stg.gen.Adjective(),
+					stg.gen.Noun(),
+					cOf,
+					cThe,
+					stg.gen.Noun(),
+				)
 			}
 		}
 	default:
@@ -436,7 +458,15 @@ func (stg *SongTitleGenerator) v3() (rv string) {
 
 				switch stg.opts.rnd(3) {
 				case 2:
-					p.Add(cAnd, stg.gen.Adjective(), stg.gen.Noun(), cOf, cThe, stg.gen.Adjective(), stg.gen.Noun())
+					p.Add(
+						cAnd,
+						stg.gen.Adjective(),
+						stg.gen.Noun(),
+						cOf,
+						cThe,
+						stg.gen.Adjective(),
+						stg.gen.Noun(),
+					)
 				case 1:
 					p.Add(stg.gen.Noun(), cOf, cThe, stg.gen.Noun())
 				default:
